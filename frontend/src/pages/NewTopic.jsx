@@ -13,6 +13,7 @@ function NewTopic() {
   const [email] = useState(user.email);
   const [catogory, setCatogory] = useState("Bait Fishing");
   const [description, setDescription] = useState("");
+  const [fishSize, setFishSize] = useState("");
   const [fishImage, setFishImage] = useState(null);
   // const [fishImageName, setFishImageName] = useState('')
 
@@ -37,7 +38,7 @@ function NewTopic() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createTopic({ catogory, description, fishImage }))
+    dispatch(createTopic({ catogory, description, fishImage, fishSize }))
       .unwrap()
       .then(() => {
         // We got a good response so navigate the user
@@ -80,18 +81,27 @@ function NewTopic() {
             </select>
           </div>
           <div className="form-group">
+            <label htmlFor="Fish Size">Fish Size (MM)</label>
+            <input
+              type="number"
+              className="form-control"
+              value={fishSize}
+              onChange={(e) => setFishSize(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="description">Description of the Catch</label>
             <textarea
               name="description"
               id="description"
               className="form-control"
-              placeholder="Description"
+              placeholder="1. Fishing Gear  2. Location  3. Duration  4. Details..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
           <div className="form-group">
-            <label htmlFor="image">Upload Image</label>
+            <label htmlFor="image">Upload Caught Fish Image</label>
             {/* <input type="file" id="image" 
                        name="fishImage"  required  onChange={handleFileChange}/> */}
 

@@ -27,6 +27,16 @@ function Header() {
           </li>
         ) : (
           <>
+          <li>
+              <Link to='/'>
+                 News
+              </Link>
+            </li>
+           {/* <li>
+              <Link to='/form'>
+                 Form
+              </Link>
+            </li> */}
             <li>
               <Link to='/login'>
                 <FaSignInAlt /> Login
