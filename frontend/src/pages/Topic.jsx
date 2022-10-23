@@ -94,8 +94,9 @@ function Topic() {
         <h3>Catogory: {topic.catogory}</h3>
         <hr />
         <div className='topic-desc'>
-          <h3>Description of Issue</h3>
+          <h3>Description of catch</h3>
           <p>{topic.description}</p>
+          <img src={topic.fishImage}/>
         </div>
         <h2>Notes</h2>
       </header>

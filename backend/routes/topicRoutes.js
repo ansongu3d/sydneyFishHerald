@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {
+  getAllTopics,
   getTopics,
   getTopic,
   createTopic,
@@ -17,6 +18,8 @@ const noteRouter = require('./noteRoutes')
 router.use('/:topicId/notes', noteRouter)
 
 router.route('/').get(protect, getTopics).post(protect, createTopic)
+
+router.route('/all').get(getAllTopics)
 
 router
   .route('/:id')

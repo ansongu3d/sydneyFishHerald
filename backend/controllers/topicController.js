@@ -8,6 +8,14 @@ const Topic = require('../models/postModel')
 // @desc    Get user topics
 // @route   GET /api/topics
 // @access  Private
+
+const getAllTopics = asyncHandler(async (req, res) => {
+  console.log('hugrfg')
+  const topics = await Topic.find();
+console.log('getTopics')
+  res.status(200).json(topics)
+})
+
 const getTopics = asyncHandler(async (req, res) => {
   console.log('hugrfg')
   const topics = await Topic.find({ user: req.user.id })
@@ -55,7 +63,7 @@ console.log(req.file)
     user: req.user.id,
     status: 'new',
     fishImageName,
-    fishImage:buffer
+    fishImage
   })
 
   res.status(201).json(topic)
@@ -108,6 +116,7 @@ const updateTopic = asyncHandler(async (req, res) => {
 })
 
 module.exports = {
+  getAllTopics,
   getTopics,
   getTopic,
   createTopic,

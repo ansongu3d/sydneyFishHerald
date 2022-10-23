@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Header from './components/Header'
 import PrivateRoute from './components/PrivateRoute'
 import Home from './pages/Home'
+import Form from './pages/Form'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import NewTopic from './pages/NewTopic'
@@ -20,6 +21,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/form' element={<Form />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route

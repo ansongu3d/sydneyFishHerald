@@ -10,7 +10,7 @@ const topicSchema = mongoose.Schema(
     catogory: {
       type: String,
       required: [true, 'Please select a catogory'],
-      enum: ['iPhone', 'Macbook Pro', 'iMac', 'iPad'],
+      enum: ['Bait Fishing', 'Lure Fishing', 'Flying Fishing', 'Trolling Fishing'],
     },
     description: {
       type: String,
@@ -27,8 +27,8 @@ const topicSchema = mongoose.Schema(
       required: false,
     },
     fishImage: {
-      data: Buffer,
-      contentType: String,
+      type: String,
+      required: true,
     },
   },
   {

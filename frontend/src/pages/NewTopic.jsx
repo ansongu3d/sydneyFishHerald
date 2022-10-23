@@ -11,7 +11,7 @@ function NewTopic() {
 
   const [name] = useState(user.name);
   const [email] = useState(user.email);
-  const [catogory, setCatogory] = useState("");
+  const [catogory, setCatogory] = useState("Bait Fishing");
   const [description, setDescription] = useState("");
   const [fishImage, setFishImage] = useState(null);
   // const [fishImageName, setFishImageName] = useState('')
