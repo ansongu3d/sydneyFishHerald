@@ -83,6 +83,7 @@ function NewTopic() {
           <div className="form-group">
             <label htmlFor="Fish Size">Fish Size (MM)</label>
             <input
+              name="fishSize"
               type="number"
               className="form-control"
               value={fishSize}

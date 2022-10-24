@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const {
+  getBaitFishingTopics,
+  getMaxFishTopic,
   getAllTopics,
   getTopics,
   getTopic,
@@ -20,6 +22,9 @@ router.use('/:topicId/notes', noteRouter)
 router.route('/').get(protect, getTopics).post(protect, createTopic)
 
 router.route('/all').get(getAllTopics)
+router.route('/BaitFishingTopics').get(getBaitFishingTopics)
+
+router.route('/maxFish').get(getMaxFishTopic)
 
 router
   .route('/:id')

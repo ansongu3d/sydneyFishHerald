@@ -10,8 +10,22 @@ const Topic = require('../models/postModel')
 // @access  Private
 
 const getAllTopics = asyncHandler(async (req, res) => {
+  console.log('all topics')
+  const topics = await Topic.find()
+console.log('getAllTopics')
+  res.status(200).json(topics)
+})
+
+const getBaitFishingTopics = asyncHandler(async (req, res) => {
+  console.log('all topics')
+  const topics = await Topic.find().sort({createdAt:-1,catogory:"Bait Fishing"});
+console.log('getBaitFishingTopics')
+  res.status(200).json(topics)
+})
+
+const getMaxFishTopic = asyncHandler(async (req, res) => {
   console.log('hugrfg')
-  const topics = await Topic.find();
+  const topics = await Topic.find().sort({fishSize:-1}).limit(1);
 console.log('getTopics')
   res.status(200).json(topics)
 })
@@ -46,7 +60,7 @@ const getTopic = asyncHandler(async (req, res) => {
 // @route   POST /api/topics
 // @access  Private
 const createTopic = asyncHandler(async (req, res) => {
-  const { catogory, description,fishImageName,fishImage } = req.body
+  const { catogory, description,fishImageName,fishImage,fishSize } = req.body
   const split = fishImage.split(','); // or whatever is appropriate here. this will work for the example given
 const base64string = split[1];
 const buffer = Buffer.from(base64string, 'base64');
@@ -62,6 +76,7 @@ console.log(req.file)
     description,
     user: req.user.id,
     status: 'new',
+    fishSize,
     fishImageName,
     fishImage
   })
@@ -116,6 +131,8 @@ const updateTopic = asyncHandler(async (req, res) => {
 })
 
 module.exports = {
+  getBaitFishingTopics,
+  getMaxFishTopic,
   getAllTopics,
   getTopics,
   getTopic,

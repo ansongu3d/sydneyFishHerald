@@ -5,8 +5,8 @@ function Form() {
   return (
     <>
       <section className='heading'>
-        <h1>What do you need help with?</h1>
-        <p>Please choose from an option below</p>
+        <h1>Share your fishing story!</h1>
+        <p>The biggest fish will be in the headline!</p>
       </section>
 
       <Link to='/new-topic' className='btn btn-reverse btn-block'>

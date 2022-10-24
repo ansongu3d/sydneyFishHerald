@@ -96,7 +96,8 @@ function Topic() {
         <div className='topic-desc'>
           <h3>Description of catch</h3>
           <p>{topic.description}</p>
-          <img src={topic.fishImage}/>
+          <p><strong>Fish Size: </strong>{topic.fishSize} (mm)</p>
+          <img className='fish-img' src={topic.fishImage}/>
         </div>
         <h2>Notes</h2>
       </header>

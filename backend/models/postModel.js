@@ -12,9 +12,13 @@ const topicSchema = mongoose.Schema(
       required: [true, 'Please select a catogory'],
       enum: ['Bait Fishing', 'Lure Fishing', 'Flying Fishing', 'Trolling Fishing'],
     },
+    fishSize: {
+      type: Number,
+      required: true,
+    },
     description: {
       type: String,
-      required: [true, 'Please enter a description of the catch'],
+      required: [true, 'Please enter fish size'],
     },
     status: {
       type: String,
