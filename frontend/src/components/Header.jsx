@@ -13,11 +13,12 @@ function Header() {
     navigate("/");
   };
 
-  return (
+  return (<>
+    <div className="logo">
+    <Link to="/">Sydney Fishing Herald</Link>
+  </div>
     <header className="header">
-      <div className="logo">
-        <Link to="/">Sydney Fishing Herald</Link>
-      </div>
+    
       <ul>
         {user ? (
           <>
@@ -52,6 +53,7 @@ function Header() {
         )}
       </ul>
     </header>
+    </>
   );
 }
 
