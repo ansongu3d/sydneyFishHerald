@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Article from '../pages/Article';
 
 function HeadLineTopic({ headline }) {
-  const { description, fishSize, fishImage,fishingGear,location } = headline;
+  const { description, fishSize, fishImage,fishingGear,location,_id } = headline;
   console.log(description);
   // const [readMore, setReadMore] = useState(false);
   // const linkName = readMore ? "Read Less << " : "Read More >> ";
@@ -32,10 +32,10 @@ function HeadLineTopic({ headline }) {
       </p>
       <img className="fish-img" src={fishImage} />
       <p>{description.slice(0,400)}</p>
-      <Link to={`/article`} className='ReadMore'>
+      <Link to={`/article/${_id}`} className='ReadMore'>
         Read More...
       </Link>
-      <Article headline={headline}/>
+      {/* <Article headline={headline}/> */}
     </div>
   );
 }

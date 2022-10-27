@@ -25,7 +25,7 @@ function App() {
             <Route path='/form' element={<Form />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/article' element={<Article />} />
+            <Route path='/article/:articleId' element={<Article />} />
             <Route
               path='/new-topic'
               element={

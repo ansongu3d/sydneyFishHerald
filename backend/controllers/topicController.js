@@ -58,6 +58,19 @@ const getTopics = asyncHandler(async (req, res) => {
 // @desc    Get user topic
 // @route   GET /api/topics/:id
 // @access  Private
+
+const matchTopic = asyncHandler(async (req, res) => {
+  const topic = await Topic.findById(req.params.id);
+
+  if (!topic) {
+    res.status(404);
+    throw new Error("Topic not found");
+  }
+
+  res.status(200).json(topic);
+});
+
+
 const getTopic = asyncHandler(async (req, res) => {
   const topic = await Topic.findById(req.params.id);
 
@@ -159,6 +172,7 @@ const updateTopic = asyncHandler(async (req, res) => {
 
 module.exports = {
   getAllNews,
+  matchTopic,
   // getBaitFishingTopics,
   // getMaxFishTopic,
   // getAllTopics,
