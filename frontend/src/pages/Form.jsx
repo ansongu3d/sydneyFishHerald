@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaQuestionCircle, FaTicketAlt } from 'react-icons/fa'
 
-function Form() {
+export default function Form() {
   return (
     <>
       <section className='heading'>
@@ -21,4 +21,4 @@ function Form() {
   )
 }
 
-export default Form
+

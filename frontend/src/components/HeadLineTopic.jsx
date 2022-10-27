@@ -1,12 +1,12 @@
-import { useState } from "react";
-import './HeadLineTopic.css';
+import { Link } from 'react-router-dom'
+import Article from '../pages/Article';
 
 function HeadLineTopic({ headline }) {
   const { description, fishSize, fishImage,fishingGear,location } = headline;
   console.log(description);
-  const [readMore, setReadMore] = useState(false);
-  const linkName = readMore ? "Read Less << " : "Read More >> ";
-  const extraContent = <p className="extra-content">{description}</p>;
+  // const [readMore, setReadMore] = useState(false);
+  // const linkName = readMore ? "Read Less << " : "Read More >> ";
+  // const extraContent = <p className="extra-content">{description}</p>;
   return (
     <div className="HeadLine">
       {/* <a
@@ -31,7 +31,11 @@ function HeadLineTopic({ headline }) {
         {fishSize} (mm)
       </p>
       <img className="fish-img" src={fishImage} />
-      <p>{description.slice(0,300)}</p>
+      <p>{description.slice(0,400)}</p>
+      <Link to={`/article`} className='ReadMore'>
+        Read More...
+      </Link>
+      <Article headline={headline}/>
     </div>
   );
 }

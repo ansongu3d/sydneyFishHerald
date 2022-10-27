@@ -5,6 +5,7 @@ import Header from './components/Header'
 import PrivateRoute from './components/PrivateRoute'
 import Home from './pages/Home'
 import Form from './pages/Form'
+import Article from './pages/Article'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import NewTopic from './pages/NewTopic'
@@ -24,6 +25,7 @@ function App() {
             <Route path='/form' element={<Form />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/article' element={<Article />} />
             <Route
               path='/new-topic'
               element={
