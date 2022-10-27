@@ -1,61 +1,38 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Spinner from "../components/Spinner";
+import { useState } from "react";
+import './HeadLineTopic.css';
 
-function HeadLineTopic() {
-  const [headline, setHeadline] = useState([]);
-  const [BaitFishingTopics, setBaitFishingTopics] = useState([]);
-
-  // NOTE: only need one useEffect here
-  // useEffect(async() => {
-  //   axios.get('/api/topics/all').then((res) => {
-  //     console.log(res.data)
-  //     setAllTopics(res.data)
-  //   })
-  // }, [])
-
-  useEffect(async () => {
-    axios.get("/api/topics/allNews").then((res) => {
-      console.log(res.data);
-      setHeadline(res.data.maxFish);
-      setBaitFishingTopics(res.data.baitFishing)
-    });
-    // axios.get("/api/topics/BaitFishingTopics").then((res) => {
-    //   console.log(res.data);
-    //   setBaitFishingTopics(res.data);
-    // });
-  }, []);
-
-  if (!headline.length || !BaitFishingTopics.length) {
-    return <Spinner />;
-  }
-
-  return (<>
-    <section>
-      {/* <p>{JSON.stringify(allTopics)}</p> */}
-      <div className="topic-desc headline">
-        <h3>CATCH OF THE DAY</h3>
-        <p>{headline[0].description}</p>
-        <p>
-          <strong>Fish Size: </strong>
-          {headline[0].fishSize} (mm)
-        </p>
-        <img className="fish-img" src={headline[0].fishImage} />
-      </div>
-    </section>
-    <section>
-      {/* <p>{JSON.stringify(allTopics)}</p> */}
-      <div className="topic-desc headline">
-        <h3>CATCH OF THE DAY</h3>
-        <p>{BaitFishingTopics[0].description}</p>
-        <p>
-          <strong>Fish Size: </strong>
-          {BaitFishingTopics[0].fishSize} (mm)
-        </p>
-        <img className="fish-img" src={BaitFishingTopics[0].fishImage} />
-      </div>
-    </section>
-    </>
+function HeadLineTopic({ headline }) {
+  const { description, fishSize, fishImage,fishingGear,location } = headline;
+  console.log(description);
+  const [readMore, setReadMore] = useState(false);
+  const linkName = readMore ? "Read Less << " : "Read More >> ";
+  const extraContent = <p className="extra-content">{description}</p>;
+  return (
+    <div className="HeadLine">
+      {/* <a
+        className="read-more-link"
+        onClick={() => {
+          setReadMore(!readMore);
+        }}
+      >
+        <h2>{linkName}</h2>
+      </a> */}
+     {/* {readMore && extraContent} */}
+     <p>
+        <strong>Fishing Gear: </strong>
+        {fishingGear}
+      </p>
+      <p>
+        <strong>Fishing Spot: </strong>
+        {location}
+      </p>
+      <p>
+        <strong>Fish Size: </strong>
+        {fishSize} (mm)
+      </p>
+      <img className="fish-img" src={fishImage} />
+      <p>{description.slice(0,300)}</p>
+    </div>
   );
 }
 

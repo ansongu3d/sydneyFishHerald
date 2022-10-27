@@ -25,8 +25,6 @@ const getAllNews = asyncHandler(async (req, res) => {
   res.status(200).json(allFishNews);
 });
 
-
-
 // const getBaitFishingTopics = asyncHandler(async (req, res) => {
 //   console.log("all topics");
 //   const topics = await Topic.find({ catogory: "Bait Fishing" })
@@ -80,8 +78,15 @@ const getTopic = asyncHandler(async (req, res) => {
 // @route   POST /api/topics
 // @access  Private
 const createTopic = asyncHandler(async (req, res) => {
-  const { catogory, description, fishImageName, fishImage, fishSize } =
-    req.body;
+  const {
+    catogory,
+    description,
+    fishImageName,
+    fishImage,
+    fishSize,
+    fishingGear,
+    location,
+  } = req.body;
   const split = fishImage.split(","); // or whatever is appropriate here. this will work for the example given
   const base64string = split[1];
   const buffer = Buffer.from(base64string, "base64");
@@ -92,8 +97,11 @@ const createTopic = asyncHandler(async (req, res) => {
   }
   console.log(req.file);
 
+  // Create a new topic data
   const topic = await Topic.create({
     catogory,
+    fishingGear,
+    location,
     description,
     user: req.user.id,
     status: "new",

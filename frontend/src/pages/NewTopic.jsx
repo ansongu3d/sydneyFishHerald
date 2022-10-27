@@ -12,33 +12,29 @@ function NewTopic() {
   const [name] = useState(user.name);
   const [email] = useState(user.email);
   const [catogory, setCatogory] = useState("Bait Fishing");
+  const [fishingGear, setfishingGear] = useState("");
+  const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
-  const [fishSize, setFishSize] = useState("");
+  const [fishSize, setFishSize] = useState(100);
   const [fishImage, setFishImage] = useState(null);
   // const [fishImageName, setFishImageName] = useState('')
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const handleFileChange = event => {
-  //   const fileObj = event.target.files[0];
-  //   if (!fileObj) {
-  //     return;
-  //   }
-
-  //   console.log('fileObj is', fileObj);
-
-  //   // 👇️ can still access file object here
-
-  //   setFishImage(fileObj)
-  //   // setFishImageName(fileObj.name)
-
-  // };
-
   const onSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createTopic({ catogory, description, fishImage, fishSize }))
+    dispatch(
+      createTopic({
+        catogory,
+        fishingGear,
+        location,
+        description,
+        fishImage,
+        fishSize,
+      })
+    )
       .unwrap()
       .then(() => {
         // We got a good response so navigate the user
@@ -91,20 +87,38 @@ function NewTopic() {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="fishingGear">Fishing Gear</label>
+            <input
+              name="fishingGear"
+              type="text"
+              className="form-control"
+              value={fishingGear}
+              onChange={(e) => setfishingGear(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="location">Fishing Spot</label>
+            <input
+              name="location"
+              type="text"
+              className="form-control"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="description">Description of the Catch</label>
             <textarea
               name="description"
               id="description"
               className="form-control"
-              placeholder="1. Fishing Gear  2. Location  3. Duration  4. Details..."
+              placeholder="Please descript your fishing details"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
           <div className="form-group">
-            <label htmlFor="image">Upload Caught Fish Image</label>
-            {/* <input type="file" id="image" 
-                       name="fishImage"  required  onChange={handleFileChange}/> */}
+            <label htmlFor="image">Upload Your Fish Image</label>
 
             <FileBase64
               type="file"
