@@ -51,6 +51,7 @@ function App() {
               }
             />
           </Routes>
+          {/* <footer>© Copyright Sydney Fishing Herald 2022.</footer> */}
         </div>
       </Router>
       <ToastContainer />

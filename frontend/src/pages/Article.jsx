@@ -24,7 +24,7 @@ export default function Article() {
   return (
     <>
       <section>
-        <div className="topic-desc headline">
+        <div className="Article_Info">
           <p>
             <strong>Fishing Gear: </strong>
             {headline.fishingGear}
@@ -37,8 +37,11 @@ export default function Article() {
             <strong>Fish Size: </strong>
             {headline.fishSize} (mm)
           </p>
-          <img className="fish-img" src={headline.fishImage} alt="fish image"/>
-          <p>{headline.description}</p>
+        </div>
+        <div>
+          <img className="fish-img" src={headline.fishImage} alt="fish image" />
+
+          <p className="R-detail">{headline.description}</p>
         </div>
       </section>
     </>

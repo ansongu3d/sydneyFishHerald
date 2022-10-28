@@ -25,8 +25,8 @@ function Topics() {
 
   return (
     <>
-      <BackButton />
-      <h1>Topics</h1>
+      
+      <h1 className='Topics'>Topics</h1>
       <div className='topics'>
         <div className='topic-headings'>
           <div>Date</div>
@@ -38,6 +38,7 @@ function Topics() {
           // only display the biggerst fish in result 
           <TopicItem key={topic._id} topic={topic} />
         ))}
+        <BackButton />
       </div>
     </>
   )

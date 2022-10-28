@@ -39,39 +39,29 @@ export default function Home() {
   return (
     <div className="News_Container">
       <section className="Max-Fishing">
-        <div className="headline">
-          <h3>CATCH OF THE DAY</h3>
-          <img className="DailyFish vectorImg" src={tuna} alt="tuna" />
-          <HeadLineTopic newsTopic={headline[0]} />
-        </div>
+        <h3 className="News-Title">CATCH OF THE DAY</h3>
+        <img className="DailyFish vectorImg" src={tuna} alt="tuna" />
+        <HeadLineTopic newsTopic={headline[0]} />
       </section>
       <section className="Bait-Fishing">
-        <div className="headline">
-          <h3>Bait Fishing Daily Tips</h3>
-          <img className="BaitFish vectorImg" src={bream} alt="bream" />
-          <HeadLineTopic newsTopic={BaitFishingTopics[0]} />
-        </div>
+        <h3 className="News-Title">Bait Fishing Daily Tips</h3>
+        <img className="BaitFish vectorImg" src={bream} alt="bream" />
+        <HeadLineTopic newsTopic={BaitFishingTopics[0]} />
       </section>
       <section className="Lure-Fishing">
-        <div className="headline">
-          <h3>Lure Fishing Daily Tips</h3>
-          <img className="LureFish vectorImg" src={salmon} alt="salmon" />
-          <HeadLineTopic newsTopic={LureFishingTopics[0]} />
-        </div>
+        <h3 className="News-Title">Lure Fishing Daily Tips</h3>
+        <img className="LureFish vectorImg" src={salmon} alt="salmon" />
+        <HeadLineTopic newsTopic={LureFishingTopics[0]} />
       </section>
       <section className="Flying-Fishing">
-        <div className="headline">
-          <h3>Flying Fishing Daily Tips</h3>
-          <img className="FlyingFish vectorImg" src={trout} alt="trout" />
-          <HeadLineTopic newsTopic={FlyingFishingTopics[0]} />
-        </div>
+        <h3 className="News-Title">Flying Fishing Daily Tips</h3>
+        <img className="FlyingFish vectorImg" src={trout} alt="trout" />
+        <HeadLineTopic newsTopic={FlyingFishingTopics[0]} />
       </section>
       <section className="Trolling-Fishing">
-        <div className="headline">
-          <h3>Trolling Fishing Daily Tips</h3>
-          <img className="TrollingFish vectorImg" src={marlin} alt="marilin" />
-          <HeadLineTopic newsTopic={TrollingFishingTopics[0]} />
-        </div>
+        <h3 className="News-Title">Trolling Fishing Daily Tips</h3>
+        <img className="TrollingFish vectorImg" src={marlin} alt="marilin" />
+        <HeadLineTopic newsTopic={TrollingFishingTopics[0]} />
       </section>
     </div>
   );

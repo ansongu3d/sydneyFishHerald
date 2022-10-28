@@ -22,17 +22,25 @@ body {
   font-size: 1.1rem;
   background: var(--preview-bg);
   font-family: var(--font);
-  color: var(--black);
+  color:rgb(23, 21, 20);
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/paper_fibers.png)
     repeat;
   line-height: 1.3;
   text-align: justify;
 }
 
+footer{
+  margin-top: -1000px;
+  color: gray;
+}
+
 a {
   text-decoration: none;
-  display: block;
+  display: inline-block;
   color: var(--black);
+}
+a:active {
+  color: gray;
 }
 
 p {
@@ -63,7 +71,7 @@ h3 {
 }
 
 .header {
-  margin-bottom: 3rem;
+  margin-bottom: 1em;
   border: solid var(--black);
   border-width: 2px 0;
   padding: 0.5rem 0;
@@ -101,8 +109,9 @@ h3 {
 .heading {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin: 20px auto;
   padding: 0 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .heading p {
@@ -111,11 +120,16 @@ h3 {
 
 .logo {
   font-family: "UnifrakturMaguntia", cursive;
-  font-size: 3.7em;
+  font-size: 5.5em;
   text-align: center;
   display: flex;
   justify-content: center;
   padding: 2rem;
+}
+
+img{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 .boxes {
@@ -145,6 +159,7 @@ h3 {
 .form {
   width: 70%;
   margin: 0 auto;
+  font-size: 1em;
 }
 
 .form-group {
@@ -160,12 +175,16 @@ h3 {
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit;
+  font-size: 1em;
 }
 
 .form-group label {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
   text-align: left;
   display: block;
   margin: 0 0 5px 3px;
+  
 }
 
 .Toastify {
@@ -199,8 +218,10 @@ h3 {
 }
 
 .btn-block {
-  width: 100%;
-  margin-bottom: 20px;
+  text-align: center;
+  width: 25%;
+  /* margin-bottom: 20px; */
+  margin:10px auto;
 }
 
 .btn-sm {
@@ -214,8 +235,10 @@ h3 {
 }
 
 .btn-back {
-  width: 150px;
-  margin-bottom: 20px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
 }
 
 .btn:hover {
@@ -386,6 +409,11 @@ p.status-complete {
   color: green;
 }
 
+.Topics{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.5em;
+}
+
 footer {
   position: sticky;
   top: 95vh;
@@ -434,7 +462,7 @@ footer {
 
   .topic-created h2,
   .heading h1 {
-    font-size: 2rem;
+    font-size: rem;
   }
 
   .heading p {
@@ -442,31 +470,246 @@ footer {
   }
 }
 
-.fish-img {
-  width: 300px;
-  height: 100%;
+.Max-Fishing {
+  grid-area: news_1;
+}
+
+.Bait-Fishing {
+  grid-area: news_2;
+}
+
+.Lure-Fishing {
+  grid-area: news_3;
+}
+
+.Flying-Fishing {
+  grid-area: news_4;
+}
+
+.Trolling-Fishing {
+  grid-area: news_5;
+}
+
+.News_Container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 30% 30%;
+  grid-template-areas:
+    "news_1 news_1 news_1 news_5"
+    "news_2 news_2 news_4 news_5"
+    "news_3 news_3 news_3 news_3";
+  row-gap: 3em;
+  max-height: 3000px;
+}
+
+section {
+  margin: 0;
+  padding: 1em;
+  width: 100%;
+  text-align: center;
+
+}
+.News-Title {
+  grid-area: News-Title;
 }
 
 .vectorImg {
   width: auto;
   height: 5%;
+  grid-area: vectorImg;
 }
 
-.News_Container {
-  display: grid;
-  grid-template-columns:
-    1fr 1fr
-    minmax(10px, 1fr) 3fr
-    repeat(5, 1fr)
-    50px auto 100px 1fr;
-}
-section {
-  display: grid;
+/* .vectorImg:hover {
+  fill: aquamarine;
+  cursor: pointer;
+} */
+
+.Fishing_Info {
+  margin-top: 2em;
+  grid-area: Fishing_Info;
+  font-size: 1.3em;
 }
 
-.headline {
-  margin: 2% auto;
+.fish-img {
+  grid-area: fish-img;
+  width: 50%;
+  height: 27rem;
+  padding: 2em;
+  float: left;
+}
+
+.fish-desc {
+  margin-top: 8em;
+  grid-area: fish-desc;
+  font-size: 1.2em;
+  text-align: left;
+}
+.ReadMore {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.Max-Fishing {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 40% 40%;
+  grid-template-areas:
+    "News-Title News-Title News-Title News-Title"
+    "vectorImg vectorImg vectorImg Fishing_Info"
+    /* "fish-img fish-img fish-img fish-img" */
+    "fish-desc fish-desc fish-desc fish-desc";
+
+  height: 95%;
+  margin-bottom: 55em;
   padding: 1em;
-  border-right: #000;
-  width: 25%;
+  width: 100%;
+  text-align: left;
 }
+
+.Max-Fishing .vectorImg {
+  width: 90%;
+  margin-top: 1em;
+}
+
+.Max-Fishing .News-Title {
+  font-size: 5.7em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 4em;
+}
+
+.DailyFish {
+  width: 100%;
+  height: 20em;
+  padding: 1em;
+}
+
+.Trolling-Fishing {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 25% 8% 20%;
+  grid-template-areas:
+    "News-Title"
+    "vectorImg"
+    "Fishing_Info"
+    "fish-desc";
+  border-left: 1.5px solid gray;
+  height: 95%;
+  max-width: 100%;
+  padding: 1em;
+  width: 100%;
+  text-align: left;
+}
+
+.Trolling-Fishing .News-Title {
+  font-size: 3em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.TrollingFish {
+  width: 100%;
+  height: 20em;
+  padding: 1em;
+}
+
+.Lure-Fishing {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 2% 5%;
+  grid-template-areas:
+    "News-Title vectorImg"
+    "Fishing_Info Fishing_Info"
+    "fish-desc fish-desc";
+  /* border-right: 1.5px solid gray; */
+  margin-top: -8em;
+  padding: 1em;
+  width: 100%;
+  text-align: left;
+}
+
+.Lure-Fishing .News-Title {
+  font-size: 3em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.LureFish {
+  width: 100%;
+  height: 15em;
+  padding: 1em;
+}
+
+.Bait-Fishing {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 6% 9% 5%;
+  grid-template-areas:
+    "News-Title News-Title"
+    "vectorImg Fishing_Info"
+    "fish-desc fish-desc";
+  /* border-right: 1.5px solid gray; */
+  column-gap: 0.5em;
+  margin-bottom: -60em;
+  padding: 1em;
+  width: 100%;
+  text-align: left;
+}
+
+.Bait-Fishing .News-Title {
+  font-size: 4em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.BaitFish {
+  width: 100%;
+  height: 22em;
+  padding: 1em;
+}
+
+.Flying-Fishing {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 0.2% 12% 1% 0%;
+  grid-template-areas:
+    "News-Title"
+    "vectorImg"
+    "Fishing_Info"
+    "fish-desc";
+    margin-bottom: -60em;
+    padding: 1em;
+    width: 100%;
+    text-align: left;
+  /* border-left: 1.5px solid gray; */
+}
+
+.Flying-Fishing .News-Title {
+  font-size: 2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.FlyingFish {
+  width: 100%;
+  height: 22em;
+  padding: 1em;
+}
+
+.Flying-Fishing .Fishing_Info {
+  font-size: 0.9em;
+}
+
+.Flying-Fishing .fish-desc {
+  font-size: 0.9em;
+}
+
+.R-detail{
+  text-align: left;
+}
+
+.Article_Info{
+  padding-left: 35px;
+  text-align: left;
+}
+
+/* .topic-view{
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+} */

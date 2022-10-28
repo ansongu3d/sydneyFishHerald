@@ -81,7 +81,6 @@ function Topic() {
   return (
     <div className="topic-page">
       <header className="topic-header">
-        <BackButton />
         <h2>
           Topic ID: {topic._id}
           <span className={`status status-${topic.status}`}>
@@ -109,9 +108,11 @@ function Topic() {
             <strong>Fishing Spot: </strong>
             {topic.location}
           </p>
-          
-          <img className="fish-img" src={topic.fishImage} alt="fish image"/>
-          <p>{topic.description}</p>
+          <div className="topic-view">
+          {/* <span className="fish-img"> */}
+            <img className="fish-img" src={topic.fishImage} alt="fish image" />
+          {/* </span> */}
+          <p>{topic.description}</p></div>
         </div>
         <h2>Notes</h2>
       </header>
@@ -162,6 +163,7 @@ function Topic() {
           Close Topic
         </button>
       )}
+      <BackButton />
     </div>
   );
 }

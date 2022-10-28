@@ -46,9 +46,8 @@ function NewTopic() {
 
   return (
     <>
-      <BackButton />
       <section className="heading">
-        <h1>Create New Topic</h1>
+      <h1>Create New Topic</h1>
         <p>Please fill out the form below</p>
       </section>
 
@@ -129,6 +128,7 @@ function NewTopic() {
           </div>
           <div className="form-group">
             <button className="btn btn-block">Submit</button>
+            <BackButton />
           </div>
         </form>
       </section>
