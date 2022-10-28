@@ -21,7 +21,7 @@ app.use('/api/users', require('./routes/userRoutes'))
 app.use('/api/topics', require('./routes/topicRoutes'))
 
 // Serve Frontend
-if (process.env.NODE_ENV === 'catogoryion') {
+// if (process.env.NODE_ENV === 'catogoryion') {
   // Set build folder as static
   app.use(express.static(path.join(__dirname, '../frontend/build')))
 
@@ -29,11 +29,11 @@ if (process.env.NODE_ENV === 'catogoryion') {
   app.get('*', (_, res) => {
     res.sendFile(path.join(__dirname, '../frontend/build/index.html'))
   })
-} else {
-  app.get('/', (_, res) => {
-    res.status(200).json({ message: 'Welcome to the Sydney Fishing Herald API' })
-  })
-}
+// } else {
+//   app.get('/', (_, res) => {
+//     res.status(200).json({ message: 'Welcome to the Sydney Fishing Herald API' })
+//   })
+// }
 
 app.use(errorHandler)
 
