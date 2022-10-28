@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
-import Article from '../pages/Article';
+import { Link } from "react-router-dom";
 
-function HeadLineTopic({ headline }) {
-  const { description, fishSize, fishImage,fishingGear,location,_id } = headline;
-  console.log(description);
+function HeadLineTopic({ newsTopic }) {
+  const { description, fishSize, fishImage, fishingGear, location, _id } =
+    newsTopic;
+  console.log(newsTopic);
   // const [readMore, setReadMore] = useState(false);
   // const linkName = readMore ? "Read Less << " : "Read More >> ";
   // const extraContent = <p className="extra-content">{description}</p>;
@@ -17,8 +17,8 @@ function HeadLineTopic({ headline }) {
       >
         <h2>{linkName}</h2>
       </a> */}
-     {/* {readMore && extraContent} */}
-     <p>
+      {/* {readMore && extraContent} */}
+      <p>
         <strong>Fishing Gear: </strong>
         {fishingGear}
       </p>
@@ -31,11 +31,10 @@ function HeadLineTopic({ headline }) {
         {fishSize} (mm)
       </p>
       <img className="fish-img" src={fishImage} />
-      <p>{description.slice(0,400)}</p>
-      <Link to={`/article/${_id}`} className='ReadMore'>
+      <p>{description.slice(0, 400)}</p>
+      <Link to={`/article/${_id}`} className="ReadMore">
         Read More...
       </Link>
-      {/* <Article headline={headline}/> */}
     </div>
   );
 }

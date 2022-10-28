@@ -16,37 +16,25 @@ const getAllNews = asyncHandler(async (req, res) => {
     .filter((t) => t.catogory === "Bait Fishing")
     .sort((a, b) => b.createdAt - a.createdAt);
   const maxFish = topics.sort((a, b) => b.fishSize - a.fishSize);
-  // const baitFishing = await Topic.find({ catogory: "Bait Fishing" })
-  //   .sort({ createdAt: -1 })
-  //   .limit(1);
-  // const maxFish = await Topic.find().sort({ fishSize: -1 }).limit(1);
-  const allFishNews = { baitFishing, maxFish };
+  const lureFishing = topics
+    .filter((t) => t.catogory === "Lure Fishing")
+    .sort((a, b) => b.createdAt - a.createdAt);
+  const flyingFishing = topics
+    .filter((t) => t.catogory === "Flying Fishing")
+    .sort((a, b) => b.createdAt - a.createdAt);
+  const trollingFishing = topics
+    .filter((t) => t.catogory === "Trolling Fishing")
+    .sort((a, b) => b.createdAt - a.createdAt);
+  const allFishNews = {
+    baitFishing,
+    maxFish,
+    lureFishing,
+    flyingFishing,
+    trollingFishing,
+  };
   console.log("getAllTopics");
   res.status(200).json(allFishNews);
 });
-
-// const getBaitFishingTopics = asyncHandler(async (req, res) => {
-//   console.log("all topics");
-//   const topics = await Topic.find({ catogory: "Bait Fishing" })
-//     .sort({ createdAt: -1 })
-//     .limit(1);
-//   console.log("getBaitFishingTopics");
-//   res.status(200).json(topics);
-// });
-
-// const getMaxFishTopic = asyncHandler(async (req, res) => {
-//   console.log("hugrfg");
-//   const topics = await Topic.find().sort({ fishSize: -1 }).limit(1);
-//   console.log("getTopics");
-//   res.status(200).json(topics);
-// });
-
-// const getAllTopics = asyncHandler(async (req, res) => {
-//   console.log("all topics");
-//   const topics = await Topic.find();
-//   console.log("getAllTopics");
-//   res.status(200).json(topics);
-// });
 
 const getTopics = asyncHandler(async (req, res) => {
   console.log("hugrfg");
@@ -69,7 +57,6 @@ const matchTopic = asyncHandler(async (req, res) => {
 
   res.status(200).json(topic);
 });
-
 
 const getTopic = asyncHandler(async (req, res) => {
   const topic = await Topic.findById(req.params.id);
@@ -173,9 +160,6 @@ const updateTopic = asyncHandler(async (req, res) => {
 module.exports = {
   getAllNews,
   matchTopic,
-  // getBaitFishingTopics,
-  // getMaxFishTopic,
-  // getAllTopics,
   getTopics,
   getTopic,
   createTopic,

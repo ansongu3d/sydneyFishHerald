@@ -12,14 +12,16 @@ function Header() {
     dispatch(logout());
     navigate("/");
   };
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
   return (<>
     <div className="logo">
     <Link to="/">Sydney Fishing Herald</Link>
   </div>
-    <header className="header">
+    <nav className="header">
     
-      <ul>
+      <ul><li>{date}</li>
         {user ? (
           <>
             <li>
@@ -52,7 +54,7 @@ function Header() {
           </>
         )}
       </ul>
-    </header>
+    </nav>
     </>
   );
 }

@@ -110,7 +110,7 @@ function Topic() {
             {topic.location}
           </p>
           
-          <img className="fish-img" src={topic.fishImage} />
+          <img className="fish-img" src={topic.fishImage} alt="fish image"/>
           <p>{topic.description}</p>
         </div>
         <h2>Notes</h2>

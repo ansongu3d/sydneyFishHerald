@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap");
+
+:root {
+  --font: "Zilla Slab", serif;
+  --font-title: "Zilla Slab", serif;
+  --font-sans-serif: "Manrope", sans-serif;
+  --black: #1c1f33;
+  --black--acc: #222;
+  --gray: #eee;
+  --gray-1: #ededed;
+  --toastify-font-family: "Zilla Slab", serif;
+}
 
 * {
   margin: 0;
@@ -7,14 +19,20 @@
 }
 
 body {
-  font-family: 'times new roman', serif;
-  height: 100vh;
-  background-color: burlywood;
+  font-size: 1.1rem;
+  background: var(--preview-bg);
+  font-family: var(--font);
+  color: var(--black);
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/paper_fibers.png)
+    repeat;
+  line-height: 1.3;
+  text-align: justify;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  display: block;
+  color: var(--black);
 }
 
 p {
@@ -36,35 +54,35 @@ h3 {
   margin-bottom: 10px;
 }
 
-
 .container {
-  /* background-color: #f8f5de;
-  background-image: linear-gradient(to right, burlywood, rgba(200, 160, 0, 0.1) 11%, rgba(0,0,0,0) 35%, rgba(200, 160, 0, 0.1) 65%);
-  box-shadow: inset 0 0 75px burlywood, inset 0 0 20px rgba(255,210,0,0.4), inset 0 0 30px burlywood;
-  width: 100%;
-  max-width: 960px; */
+  display: grid;
+  width: 80%;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
 }
 
 .header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
+  margin-bottom: 3rem;
+  border: solid var(--black);
+  border-width: 2px 0;
+  padding: 0.5rem 0;
 }
 
 .header ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  border: solid var(--black);
+  border-width: 1px 0;
+  padding: 0.2em;
+  font-weight: bold;
 }
 
 .header ul li {
   margin-left: 20px;
+  border-right: solid var(--black);
+  border-width: 2px 0;
 }
 
 .header ul li a {
@@ -91,9 +109,9 @@ h3 {
   color: #828282;
 }
 
-.logo{
-  font-family: 'UnifrakturMaguntia', cursive;
-  font-size:  3em;
+.logo {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-size: 3.7em;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -150,12 +168,17 @@ h3 {
   margin: 0 0 5px 3px;
 }
 
+.Toastify {
+  font-family: var(--font);
+}
+
 .btn {
   padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 5px;
   background: #000;
   color: #fff;
+  font-family: var(--font);
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -422,4 +445,28 @@ footer {
 .fish-img {
   width: 300px;
   height: 100%;
+}
+
+.vectorImg {
+  width: auto;
+  height: 5%;
+}
+
+.News_Container {
+  display: grid;
+  grid-template-columns:
+    1fr 1fr
+    minmax(10px, 1fr) 3fr
+    repeat(5, 1fr)
+    50px auto 100px 1fr;
+}
+section {
+  display: grid;
+}
+
+.headline {
+  margin: 2% auto;
+  padding: 1em;
+  border-right: #000;
+  width: 25%;
 }
