@@ -1,6 +1,6 @@
 # Sydney Fishing Herald App
 
-[![Logo](https://github.com/ansongu3d/sydneyFishHerald/blob/main/frontend/src/assets/sfh_logo.png width=200 height=200)]
+[![Logo](https://github.com/ansongu3d/sydneyFishHerald/blob/main/frontend/src/assets/sfh_logo.png | width=200 height=200)]
 
 Fishing News application built with the MERN stack.  MangoDB + ExpressJs + React + NodeJs.
 The application is blog style one, which allow Anglers post their fishing result to share online.
