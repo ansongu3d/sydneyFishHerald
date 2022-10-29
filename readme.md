@@ -15,6 +15,12 @@ The results will be presented as Newspaper style at the app's NEWS page.
 There are 3 Collections in the database: users, posts, notes.
 [![data structure](https://github.com/ansongu3d/sydneyFishHerald/blob/main/frontend/src/assets/data%20structure.png)]
 
+# App Structure (MVC)
+It contains: Frontend & Backend parts.
+Frontend: [pages: 8 routes] [features: auth, notes, topics function hooks] [components: header,headlineTopic,noteitem...] 
+Backend: [routes: 3 routes] [models: database schema] [controllers: noteController, topicController, userController]
+ [middleware: auth & error] [config: connection to database]
+
 # Deloyed Site
 https://fast-tor-14073.herokuapp.com/
 
