@@ -6,6 +6,11 @@ Fishing News application built with the MERN stack.  MangoDB + ExpressJs + React
 The application is blog style one, which allow Anglers post their fishing result to share online.
 The results will be presented as Newspaper style at the app's NEWS page.
 
+# Function - Create a Toptic
+
+[![data structure](https://github.com/ansongu3d/sydneyFishHerald/blob/main/frontend/src/assets/form.png)]
+
+
 # Data Structure
 There are 3 Collections in the database: users, posts, notes.
 [![data structure](https://github.com/ansongu3d/sydneyFishHerald/blob/main/frontend/src/assets/data%20structure.png)]
