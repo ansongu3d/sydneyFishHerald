@@ -8,7 +8,7 @@ The results will be presented as Newspaper style at the app's NEWS page.
 
 # Function - Create a Topic
 
-[![Topic](https://github.com/ansongu3d/sydneyFishHerald/blob/main/frontend/src/assets/form.png)]
+<img src="https://github.com/ansongu3d/sydneyFishHerald/blob/main/frontend/src/assets/Form.png" width="800">
 
 
 # Data Structure
