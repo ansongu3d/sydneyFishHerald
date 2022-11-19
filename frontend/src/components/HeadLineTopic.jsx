@@ -26,12 +26,12 @@ function HeadLineTopic({ newsTopic }) {
       {/* <div className="fish-img">
         <img src={fishImage} />
       </div> */}
-      <p className="fish-desc">
+      <div className="fish_desc">
         {description.slice(0, 400)}... 
         <Link to={`/article/${_id}`} className="ReadMore">
             Read More...
         </Link>
-      </p>
+      </div>
     </>
   );
 }

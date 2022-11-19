@@ -39,28 +39,28 @@ export default function Home() {
   return (
     <div className="News_Container">
       <section className="Max-Fishing">
-        <h3 className="News-Title">CATCH OF THE DAY</h3>
-        <img className="DailyFish vectorImg" src={tuna} alt="tuna" />
+        <div className="News-Title">CATCH OF THE DAY</div>
+        <div className="fish_imgV"><img className="DailyFish vectorImg" src={tuna} alt="tuna" /></div>
         <HeadLineTopic newsTopic={headline[0]} />
       </section>
       <section className="Bait-Fishing">
-        <h3 className="News-Title">Bait Fishing Daily Tips</h3>
-        <img className="BaitFish vectorImg" src={bream} alt="bream" />
+        <div className="News-Title">Bait Fishing Daily Tips</div>
+        <div className="fish_imgV"><img className="BaitFish vectorImg" src={bream} alt="bream" /></div>
         <HeadLineTopic newsTopic={BaitFishingTopics[0]} />
       </section>
       <section className="Lure-Fishing">
-        <h3 className="News-Title">Lure Fishing Daily Tips</h3>
-        <img className="LureFish vectorImg" src={salmon} alt="salmon" />
+        <div className="News-Title">Lure Fishing Daily Tips</div>
+        <div className="fish_imgV"><img className="LureFish vectorImg" src={salmon} alt="salmon" /></div>
         <HeadLineTopic newsTopic={LureFishingTopics[0]} />
       </section>
       <section className="Flying-Fishing">
-        <h3 className="News-Title">Flying Fishing Daily Tips</h3>
-        <img className="FlyingFish vectorImg" src={trout} alt="trout" />
+        <div className="News-Title">Flying Fishing Daily Tips</div>
+        <div className="fish_imgV"><img className="FlyingFish vectorImg" src={trout} alt="trout" /></div>
         <HeadLineTopic newsTopic={FlyingFishingTopics[0]} />
       </section>
       <section className="Trolling-Fishing">
-        <h3 className="News-Title">Trolling Fishing Daily Tips</h3>
-        <img className="TrollingFish vectorImg" src={marlin} alt="marilin" />
+        <div className="News-Title">Trolling Fishing Daily Tips</div>
+        <div className="fish_imgV"><img className="TrollingFish vectorImg" src={marlin} alt="marilin" /></div>
         <HeadLineTopic newsTopic={TrollingFishingTopics[0]} />
       </section>
     </div>
